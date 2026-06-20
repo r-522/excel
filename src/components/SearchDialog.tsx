@@ -2,7 +2,7 @@
 // Search & Replace dialog
 
 import React, { useState, useCallback, useEffect } from 'react';
-import { Search, X, ChevronDown, ChevronUp } from 'lucide-react';
+import { X, ChevronDown, ChevronUp } from 'lucide-react';
 import { Button } from './ui/button';
 import { useWorkbook } from '@/hooks/useWorkbook';
 import { useSelection } from '@/hooks/useSelection';
@@ -15,7 +15,7 @@ interface SearchDialogProps {
 }
 
 export function SearchDialog({ open, onClose, initialMode = 'search' }: SearchDialogProps) {
-  const { activeSheet, activeSheetIndex, updateCell } = useWorkbook();
+  const { activeSheet, updateCell } = useWorkbook();
   const { selectCell } = useSelection();
 
   const [query, setQuery] = useState('');

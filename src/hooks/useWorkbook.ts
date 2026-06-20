@@ -3,7 +3,7 @@
 
 import { useCallback } from 'react';
 import { useWorkbookContext } from '@/context/WorkbookContext';
-import { WorkbookAction, CellData, CellFormat, CellRange, ChartConfig } from '@/types';
+import { WorkbookAction, CellData, CellFormat, CellRange } from '@/types';
 
 export function useWorkbook() {
   const { state, dispatch } = useWorkbookContext();

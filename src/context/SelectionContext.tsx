@@ -7,7 +7,6 @@ import {
   SelectionState,
   SelectionAction,
   CellAddress,
-  CellRange,
 } from '@/types';
 import { normalizeRange } from '@/lib/utils';
 

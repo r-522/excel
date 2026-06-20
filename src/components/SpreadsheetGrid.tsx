@@ -244,7 +244,7 @@ export function SpreadsheetGrid({ charts }: SpreadsheetGridProps) {
   if (!activeSheet) return null;
 
   const numCols = activeSheet.cells[0]?.length ?? 26;
-  const numRows = activeSheet.cells.length;
+  const _numRows = activeSheet.cells.length;
   const hiddenSet = new Set(activeSheet.hiddenRows);
 
   return (
@@ -321,12 +321,12 @@ function SelectionOverlay({
   anchor,
   focus,
   sheet,
-  containerRef,
+  _containerRef,
 }: {
   anchor: CellAddress;
   focus: CellAddress;
   sheet: import('@/types').SheetData;
-  containerRef: React.RefObject<HTMLDivElement>;
+  _containerRef: React.RefObject<HTMLDivElement>;
 }) {
   const minRow = Math.min(anchor.row, focus.row);
   const maxRow = Math.max(anchor.row, focus.row);

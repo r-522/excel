@@ -1,7 +1,7 @@
 'use client';
 // Excel-style sheet tabs with drag-reorder, rename, right-click menu
 
-import React, { useState, useRef, useCallback } from 'react';
+import React, { useState, useRef } from 'react';
 import { Plus, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useWorkbook } from '@/hooks/useWorkbook';
 

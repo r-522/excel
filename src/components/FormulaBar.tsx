@@ -4,7 +4,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useWorkbook } from '@/hooks/useWorkbook';
 import { useSelection } from '@/hooks/useSelection';
-import { colIndexToLetter, cellAddressToA1 } from '@/lib/utils';
+import { cellAddressToA1 } from '@/lib/utils';
 
 export function FormulaBar() {
   const { activeSheet, updateCell } = useWorkbook();
