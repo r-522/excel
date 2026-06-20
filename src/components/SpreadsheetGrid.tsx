@@ -309,7 +309,7 @@ export function SpreadsheetGrid({ charts }: SpreadsheetGridProps) {
         anchor={anchor}
         focus={focus}
         sheet={activeSheet}
-        containerRef={containerRef}
+        _containerRef={containerRef}
       />
 
       {charts}
