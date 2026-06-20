@@ -16,7 +16,7 @@ const DEFAULT_ROW_HEIGHT = 20;
 const CHAR_WIDTH_PX = 7;
 const PT_TO_PX = 1.333;
 
-function xlsxStyleToCellFormat(style: XLSX.CellStyle | undefined): CellFormat | undefined {
+function xlsxStyleToCellFormat(style: any): CellFormat | undefined {
   if (!style) return undefined;
   const fmt: CellFormat = {};
   if (style.font?.bold) fmt.fontBold = true;
@@ -78,7 +78,7 @@ function parseSheet(ws: XLSX.WorkSheet, sheetName: string): SheetData {
 
       const formula = cell.f ? `=${cell.f}` : undefined;
       const value = cell.v ?? null;
-      const format = xlsxStyleToCellFormat(cell.s as XLSX.CellStyle | undefined);
+      const format = xlsxStyleToCellFormat(cell.s as any);
       const numFmt = cell.z as string | undefined;
 
       cells[r][c] = {
@@ -182,9 +182,9 @@ export async function parseFile(file: File, password?: string): Promise<Workbook
   };
 }
 
-function cellFormatToXlsxStyle(fmt?: CellFormat): XLSX.CellStyle | undefined {
+function cellFormatToXlsxStyle(fmt?: CellFormat): any {
   if (!fmt) return undefined;
-  const style: XLSX.CellStyle = {};
+  const style: any = {};
 
   if (fmt.fontBold || fmt.fontItalic || fmt.fontUnderline || fmt.fontStrikethrough || fmt.fontSize || fmt.fontColor) {
     style.font = {};
